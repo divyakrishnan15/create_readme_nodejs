@@ -70,8 +70,8 @@ function writeToFile(fileName, data) {
      readmeFile(data)
 
     // generateMD.renderLicenseLink(data.license)
-    // fs.writeFile(fileName,`${readme_data}`,err=>
-    // err?'good':'bad')
+    fs.writeFile(fileName,`${readme}`,err=>
+    err?'good':'bad')
 }
 
 function readmeFile(data){
@@ -85,8 +85,10 @@ function readmeFile(data){
     var tests = `## Contents : ${data.tests}`
     var questions = `## Contents : ${data.questions}`
 
+    var readme = `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
     console.log(`${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`)
-    return `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
+    // return `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
+    return readme
 }
 
 // TODO: Create a function to initialize app

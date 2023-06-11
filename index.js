@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
-// const generateMD = require('./utils/generateMarkdown.js')
+const generateMD = require('./utils/generateMarkdown.js')
 const fs = require('fs')
 const inquirer = require('inquirer')
-// var data={}
+var readme_data=''
 
 
 // TODO: Create an array of questions for user input
@@ -36,8 +36,8 @@ const inquirer = require('inquirer')
     {
         type:'checkbox',
         message:"Choose your project License :",
-        choices:["MIT","Apache","Eclipse"],
-        name:'Choose your license:'
+        choices:["MIT","Javascript","Eclipse"],
+        name:'license'
     },
     {
         type:'input',
@@ -63,9 +63,30 @@ const inquirer = require('inquirer')
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(`response = ${JSON.stringify(data)}`)
-    fs.writeFile(fileName,`${JSON.stringify(data)}`,err=>
-    err?'good':'bad')
+    readme_data = JSON.stringify(data)
+    console.log("readme_data = ",readme_data)
+    console.log("readme_data.title = ",data.title)
+    console.log("readme_data.license = ",data.license)
+     readmeFile(data)
+
+    // generateMD.renderLicenseLink(data.license)
+    // fs.writeFile(fileName,`${readme_data}`,err=>
+    // err?'good':'bad')
+}
+
+function readmeFile(data){
+    var title = `# ${data.title} ## license ${generateMD.renderLicenseBadge(license)}`
+    var desc = `## Description : ${data.desc}`
+    var contents =`## Contents : ${data.contents}`
+    var installation = `## Contents : ${data.installation}`
+    var usage = `## Contents : ${data.usage}`
+    var license = `## Contents : ${data.license}`
+    var contributing = `## Contents : ${data.contributing}`
+    var tests = `## Contents : ${data.tests}`
+    var questions = `## Contents : ${data.questions}`
+
+    console.log(`${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`)
+    return `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
 }
 
 // TODO: Create a function to initialize app

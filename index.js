@@ -76,15 +76,15 @@ function writeToFile(fileName, data) {
 
 function readmeFile(data){
     // var title = `# ${data.title} ## license ${generateMD.renderLicenseBadge(license)}`
-    var title = `# ${data.title}`
-    var desc = `## Description : ${data.desc}`
-    var contents =`## Contents : ${data.contents}`
-    var installation = `## Contents : ${data.installation}`
-    var usage = `## Contents : ${data.usage}`
-    var license = `## Contents : ${data.license}`
-    var contributing = `## Contents : ${data.contributing}`
-    var tests = `## Contents : ${data.tests}`
-    var questions = `## Contents : ${data.questions}`
+    var title = `# Title: ${data.title} \n`
+    var desc = `## Description : ${data.desc} \n`
+    var contents =`## Contents : ${data.contents} \n `
+    var installation = `## Installation : ${data.installation} \n`
+    var usage = `## Usage : ${data.usage} \n`
+    var license = `## License : ${data.license} \n`
+    var contributing = `## Contributing : ${data.contributing} \n`
+    var tests = `## Tests : ${data.tests} \n`
+    var questions = `## Questions : ${data.questions} \n`
 
     var readme = `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
     console.log(`${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`)

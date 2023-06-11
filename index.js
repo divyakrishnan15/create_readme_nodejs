@@ -67,15 +67,16 @@ function writeToFile(fileName, data) {
     console.log("readme_data = ",readme_data)
     console.log("readme_data.title = ",data.title)
     console.log("readme_data.license = ",data.license)
-     readmeFile(data)
+    var readme1 = readmeFile(data)
 
     // generateMD.renderLicenseLink(data.license)
-    fs.writeFile(fileName,`${readme}`,err=>
+    fs.writeFile(fileName,`${readme1}`,err=>
     err?'good':'bad')
 }
 
 function readmeFile(data){
-    var title = `# ${data.title} ## license ${generateMD.renderLicenseBadge(license)}`
+    // var title = `# ${data.title} ## license ${generateMD.renderLicenseBadge(license)}`
+    var title = `# ${data.title}`
     var desc = `## Description : ${data.desc}`
     var contents =`## Contents : ${data.contents}`
     var installation = `## Contents : ${data.installation}`

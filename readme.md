@@ -1,1 +1,1 @@
-{"title":"div","desc":"desc","contents":"c","installation":"ins","usage":"us","Choose your license:":["MIT"],"contributing":"con","tests":"t","questions":"q"}
+{"title":"app","desc":"desc","contents":"con","installation":"ins","usage":"us","license:":["MIT"],"contributing":"co","tests":"t","questions":"q"}

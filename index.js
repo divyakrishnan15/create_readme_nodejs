@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+
 const generateMD = require('./utils/generateMarkdown.js')
 const fs = require('fs')
 const inquirer = require('inquirer')
@@ -6,54 +7,53 @@ var readme_data=''
 
 
 // TODO: Create an array of questions for user input
-// const questions = [
     inquirer.prompt([
     {
         type:'input',
         message:"Project Title :",
-        name:'title',
+        name:'Title',
     },
     {
         type:'input',
         message:"Project Description :",
-        name:'desc',
+        name:'Description',
     },
     {
         type:'input',
-        message:"Table of Contents :",
-        name:'contents',
+        message:"Project of Contents :",
+        name:'Contents',
     },
     {
         type:'input',
-        message:"project Installation :",
-        name:'installation',
+        message:"Project Installation :",
+        name:'Installation',
     },
     {
         type:'input',
-        message:"project Usage :",
-        name:'usage',
+        message:"Project Usage :",
+        name:'Usage',
+    },
+    {
+        type:'input',
+        message:"Project Tests :",
+        name:'Tests'
+    },
+    {
+        type:'input',
+        message:"Enter your Github username :",
+        name:'githubusername'
+    },
+    {
+        type:'input',
+        message:"Enter your Github email address :",
+        name:'emailaddress'
     },
     {
         type:'checkbox',
         message:"Choose your project License :",
         choices:["MIT","Javascript","Eclipse"],
-        name:'license'
+        name:'License'
     },
-    {
-        type:'input',
-        message:"project Contributing :",
-        name:'contributing',
-    },
-    {
-        type:'input',
-        message:"project Tests :",
-        name:'tests'
-    },
-    {
-        type:'input',
-        message:"project Questions :",
-        name:'questions'
-    }
 ])
 .then((response)=>{
         (response)
@@ -64,41 +64,34 @@ var readme_data=''
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     readme_data = JSON.stringify(data)
-    console.log("readme_data = ",readme_data)
-    console.log("readme_data.title = ",data.title)
-    console.log("readme_data.license = ",data.license)
-    var readme1 = readmeFile(data)
 
-    // generateMD.renderLicenseLink(data.license)
-    fs.writeFile(fileName,`${readme1}`,err=>
+    fs.writeFile(fileName,readmeFile(data),err=>
     err?'good':'bad')
 }
 
-function readmeFile(data){
-    // var title = `# ${data.title} ## license ${generateMD.renderLicenseBadge(license)}`
-    var title = `# Title: \n ${data.title} \n`
-    var desc = `## Description : \n ${data.desc} \n`
-    var contents =`## Contents : \n ${data.contents} \n `
-    var installation = `## Installation : \n ${data.installation} \n`
-    var usage = `## Usage : \n ${data.usage} \n`
-    var license = `## License : \n ${data.license} \n`
-    var contributing = `## Contributing : \n ${data.contributing} \n`
-    var tests = `## Tests : \n ${data.tests} \n`
-    var questions = `## Questions : \n ${data.questions} \n`
 
-    var readme = `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
-    console.log(`${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`)
-    // return `${title} ${desc} ${contents} ${installation} ${usage} ${license} ${contributing} ${tests} ${questions}`
+
+function readmeFile(data){
+    var title = `# ${data.Title} ${generateMD.license(data.License)} \n`
+    var toc = `## Table Of Contents : \n ${generateMD.toc(data.toc)} \n`
+    var document = `## Documentation \n <a name="Documentation"></a>`
+    var desc = `## Description :  \n <a name="Description"></a>  \n ${data.Description} \n`
+    var contents =`## Contents :  \n <a name="Contents"></a> \n ${data.Contents} \n `
+    var installation = '## Installation :  \n '+'<a name="Installation"></a> \n'+'```shell \n'+data.Installation+'\n'+' ```\n'
+    var usage = `## Usage :  \n <a name="Usage"></a> \n ${data.Usage} \n`
+    var tests = `## Tests :  \n <a name="Tests"></a> \n ${data.Tests} \n`
+    var questions = `## Questions :  \n <a name="Questions"></a> \n 1. What is your Github Username? \n 2. What is your Email address ? \n`
+    var answers = '## Answers :  \n <a name="Answers"></a> \n 1.Github Username = '+data.githubusername+'\n'+'2.Email address = '+data.emailaddress+'\n'
+    var license = `## License :  \n <a name="License"></a> \n ${generateMD.license(data.License)} \n`
+    
+
+    var readme = `${title} ${toc} ${desc} ${contents} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} `
+    console.log(`${title} ${toc} ${desc} ${contents} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} `)
+
     return readme
 }
 
-// TODO: Create a function to initialize app
-function init() {
-    // writeToFile('.readME.txt',res.title)
-}
 
-// Function call to initialize app
-init();
 
 
 // npm i questions

@@ -20,11 +20,6 @@ var readme_data=''
     },
     {
         type:'input',
-        message:"Project of Contents :",
-        name:'Contents',
-    },
-    {
-        type:'input',
         message:"Project Installation :",
         name:'Installation',
     },
@@ -73,42 +68,29 @@ function writeToFile(fileName, data) {
 
 function readmeFile(data){
     var title = `# ${data.Title} ${generateMD.license(data.License)} \n`
+    var nodebadge = `[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) \n`
+    var jsbadge = `[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) \n`
+    var inquirerbadge = `[![Inquirer](https://img.shields.io/badge/Inquirer-0d0d0d?style=for-the-badge&logo=inquirer&logoColor=white)](https://www.npmjs.com/package/inquirer)\n`
     var toc = `## Table Of Contents : \n ${generateMD.toc(data.toc)} \n`
-    var document = `## Documentation \n <a name="Documentation"></a>`
     var desc = `## Description :  \n <a name="Description"></a>  \n ${data.Description} \n`
-    var contents =`## Contents :  \n <a name="Contents"></a> \n ${data.Contents} \n `
     var installation = '## Installation :  \n '+'<a name="Installation"></a> \n'+'```shell \n'+data.Installation+'\n'+' ```\n'
     var usage = `## Usage :  \n <a name="Usage"></a> \n ${data.Usage} \n`
     var tests = `## Tests :  \n <a name="Tests"></a> \n ${data.Tests} \n`
     var questions = `## Questions :  \n <a name="Questions"></a> \n 1. What is your Github Username? \n 2. What is your Email address ? \n`
-    var answers = '## Answers :  \n <a name="Answers"></a> \n 1.Github Username = '+data.githubusername+'\n'+'2.Email address = '+data.emailaddress+'\n'
+    var answers =`
+    | Github Username  | **Email id** |
+    | --- | --- |
+    | [${data.githubusername}](https://github.com/${data.githubusername}) | ${data.emailaddress} \n`
     var license = `## License :  \n <a name="License"></a> \n ${generateMD.license(data.License)} \n`
+    var video = `## Video :\n ![video](https://github.com/divyakrishnan15/readme-test/assets/40469923/20a1f414-dae2-4028-8d2b-eb976ac78ecc) \n`
+    var copyright = `### Copyright © 2023, Divya Krishnan. Released under the [MIT License](LICENSE).`
     
 
-    var readme = `${title} ${toc} ${desc} ${contents} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} `
-    console.log(`${title} ${toc} ${desc} ${contents} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} `)
+    var readme = `${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} ${video} ${copyright}`
+    // console.log(`${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} ${video} ${copyright}`)
 
     return readme
 }
 
 
 
-
-// npm i questions
-
-
-// GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README

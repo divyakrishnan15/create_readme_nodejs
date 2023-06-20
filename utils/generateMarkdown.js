@@ -67,8 +67,8 @@ function renderLink() {
         5.  [Usage](#Usage) \n
         6.  [Tests](#Tests) \n
         7.  [Questions](#Questions) \n
-        8.  [Answers](#Answers) \n
-        9.  [License](#License) \n`
+        8.  [License](#License) \n
+        9.  [Video](#Video) \n`
   return `${link}`
 }
 

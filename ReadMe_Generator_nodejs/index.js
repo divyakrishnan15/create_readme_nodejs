@@ -5,7 +5,6 @@ const fs = require('fs')
 const inquirer = require('inquirer')
 var readme_data=''
 
-
 // TODO: Create an array of questions for user input
     inquirer.prompt([
     {
@@ -20,6 +19,21 @@ var readme_data=''
     },
     {
         type:'input',
+        message:"Enter your Github username :",
+        name:'githubusername'
+    },
+    {
+        type:'input',
+        message:"Enter your Github email address :",
+        name:'emailaddress'
+    },
+    {
+        type:'input',
+        message:"Enter your Github project repo :",
+        name:'Gitrepo'
+    },
+    {
+        type:'input',
         message:"Project Installation :",
         name:'Installation',
     },
@@ -30,18 +44,18 @@ var readme_data=''
     },
     {
         type:'input',
-        message:"Project Tests :",
-        name:'Tests'
+        message:"Project Video :",
+        name:'Video'
     },
     {
         type:'input',
-        message:"Enter your Github username :",
-        name:'githubusername'
+        message:"Project screenshot :",
+        name:'Screenshot'
     },
     {
         type:'input',
-        message:"Enter your Github email address :",
-        name:'emailaddress'
+        message:"Project Test :",
+        name:'tests'
     },
     {
         type:'checkbox',
@@ -73,24 +87,27 @@ function readmeFile(data){
     var inquirerbadge = `[![Inquirer](https://img.shields.io/badge/Inquirer-0d0d0d?style=for-the-badge&logo=inquirer&logoColor=white)](https://www.npmjs.com/package/inquirer)\n`
     var toc = `## Table Of Contents : \n ${generateMD.toc(data.toc)} \n`
     var desc = `## Description :  \n <a name="Description"></a>  \n ${data.Description} \n`
-    var installation = '## Installation :  \n '+'<a name="Installation"></a> \n'+'```shell \n'+data.Installation+'\n'+' ```\n'
-    var usage = `## Usage :  \n <a name="Usage"></a> \n ${data.Usage} \n`
     var tests = `## Tests :  \n <a name="Tests"></a> \n ${data.Tests} \n`
     var questions = `## Questions :  \n <a name="Questions"></a> \n 1. What is your Github Username? \n 2. What is your Email address ? \n`
     var answers =`
-    | Github Username  | **Email id** |
-    | --- | --- |
-    | [${data.githubusername}](https://github.com/${data.githubusername}) | ${data.emailaddress} \n`
+    | Github Username  | **Email id** | **Github Repo link** |
+    | --- | --- | --- |
+    | [${data.githubusername}](https://github.com/${data.githubusername}) | ${data.emailaddress} | [${data.Title}](${data.Gitrepo}/) \n`
+    var installation = '## Installation :  \n '+'<a name="Installation"></a> \n'+'```shell \n'+data.Installation+'\n'+' ```\n'
+    var usage = `## Usage :  \n <a name="Usage"></a> \n ${data.Usage} \n`
+    var watchmevideo = `## Watchme Video : \n <a name="Watchme"></a> \n 
+    ${data.Video}\n`
     var license = `## License :  \n <a name="License"></a> \n ${generateMD.license(data.License)} \n`
-    var video = `## Video :\n ![video](https://github.com/divyakrishnan15/readme-test/assets/40469923/20a1f414-dae2-4028-8d2b-eb976ac78ecc) \n`
-    var copyright = `### Copyright © 2023, Divya Krishnan. Released under the [MIT License](LICENSE).`
+    var screenshot = `## Screenshot :\n 
+    ![screenshot!](${data.screenshot}) \n`
+    var tests = `## Tests :\n 
+    ![screenshot!](${data.tests}) \n`
+    var copyright = `#### Copyright © 2023, Divya Krishnan. Released under the [MIT License](LICENSE).`
     
 
-    var readme = `${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} ${video} ${copyright}`
-    // console.log(`${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${installation} ${usage} ${tests} ${questions} ${answers} ${license} ${video} ${copyright}`)
+    var readme = `${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${questions} ${answers} ${installation} ${usage} ${watchmevideo} ${license} ${screenshot} ${tests} ${copyright}`
+    // console.log(`${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${userstory} ${acceptcriteria} ${questions} ${answers} ${installation} ${usage} ${watchmevideo} ${license} ${screenshot} ${tests} ${copyright}`)
 
     return readme
 }
-
-
 

@@ -55,5 +55,7 @@ npm i
  ## Screenshot : 
  <a name="screenshot"></a> 
  ![image](https://github.com/divyakrishnan15/create_readme_nodejs/assets/40469923/30b208d1-f268-41be-8be4-151d40a86a40)
+ ![image](https://github.com/divyakrishnan15/create_readme_nodejs/assets/40469923/3c3814e1-46da-4b95-b874-04e2297e95f0)
+
 
  #### Copyright © 2023, Divya Krishnan. Released under the [MIT License](https://choosealicense.com/licenses/mit/).

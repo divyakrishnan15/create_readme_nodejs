@@ -9,54 +9,49 @@
 
         2.  [Description](#Description) 
 
-        3.  [UserStory](#UserStory) 
+        3.  [Questions](#Questions) 
 
-        4.  [AcceptanceCriteria](#AcceptanceCriteria) 
+        4.  [Installation](#Installation) 
 
-        5.  [Questions](#Questions) 
+        5.  [Usage](#Usage) 
 
-        6.  [Installation](#Installation) 
+        6.  [Video](#Video) 
 
-        7.  [Usage](#Usage) 
+        7.  [License](#License) 
 
-        8.  [Video](#Video) 
+        8. [Tests](#Tests) 
 
-        9.  [License](#License) 
-
-        10. [Screenshot](#Screenshot) 
-
-        11.  [Tests](#Tests) 
+        9. [Screenshot](#screenshot) 
  
  ## Description :  
  <a name="Description"></a>  
- This App provides 5 days forcaste of weather for the city you search. It also provides temperature,wind speed,humidity levels for the current and next 5days.This app also saves the prviously searched cities, so that it is easy to retrieve the temperature of the previsouly searched cities. 
+ The best platform for viewing the weather of a region, with a splendid UI. It has several features including a google map, 5 day forcast and a search history to make sure you have the BEST experience! It also provides temperature, wind speed, humidity levels for the current and next 5 days. 
  ## Questions :  
  <a name="Questions"></a> 
  1. What is your Github Username? 
  2. What is your Email address ? 
  
-    | Github Username  | **Email id** | **Github Repo link** |
-    | --- | --- | --- |
-    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [Weather App](https://github.com/divyakrishnan15/weatherapp/) 
+    | Github Username  | **Email id** | **Github Repo link** | **Deployed Url** |
+    | --- | --- | --- | --- |
+    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [Weather App](https://github.com/divyakrishnan15/weatherapp/) | [Weather App](https://divyakrishnan15.github.io/weatherapp//) 
  ## Installation :  
  <a name="Installation"></a> 
 ```shell 
-npm i abc
+npm i inquirer
  ```
  ## Usage :  
  <a name="Usage"></a> 
- usge 
+ Download the code to your local. Perform npm i to install all the packages. Click on the deployed url in the readme.When the app opens in the browser,Enter a city. The user can see the current and 5 day forecast of the weather for the city. 
  ## Watchme Video : 
- <a name="Watchme"></a> 
- 
-    [![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+ <a name="Video"></a> 
+ [![Watch the video](https://img.youtube.com/vi/qUvt8HQKX6A/maxresdefault.jpg)](https://youtu.be/qUvt8HQKX6A)
  ## License :  
  <a name="License"></a> 
- ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
- ## Screenshot :
- 
-    ![screenshot!](undefined) 
- ## Tests :  
+ [MIT License](https://choosealicense.com/licenses/mit/) 
+ ## Tests :
  <a name="Tests"></a> 
- undefined 
- #### Copyright © 2023, Divya Krishnan. Released under the [MIT License](LICENSE).
+ There are no test for this app but in future we have planned to add the test with JEST.
+ ## Screenshot : 
+ <a name="screenshot"></a> 
+ ![Watch the video](https://img.youtube.com/vi/qUvt8HQKX6A/maxresdefault.jpg) 
+ #### Copyright © 2023, Divya Krishnan. Released under the [MIT License](https://choosealicense.com/licenses/mit/).

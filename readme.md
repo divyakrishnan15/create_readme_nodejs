@@ -44,7 +44,8 @@ npm i
  Download the code to your local. Enter npm i to install all the packages in the command line. Enter node index.js. Series of questions will be asked. Answer the questions and selecte a license. Readme.md file will be generated sucessfully. (Note = to copy the content in command prompt use ctrl+shift+v) 
  ## Watchme Video : 
  <a name="Video"></a> 
- [![Watch the video](https://img.youtube.com/vi/qUvt8HQKX6A/maxresdefault.jpg)](https://youtu.be/qUvt8HQKX6A)
+ 
+ 
  ## License :  
  <a name="License"></a> 
  [MIT License](https://choosealicense.com/licenses/mit/) 

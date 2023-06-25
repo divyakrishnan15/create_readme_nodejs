@@ -62,15 +62,19 @@ function renderLink() {
       `1.  [Documentation](#documentation) \n
         1.  [Title](#Title) \n
         2.  [Description](#Description) \n
-        3.  [Contents](#Contents) \n
-        4.  [Installation](#Installation) \n
-        5.  [Usage](#Usage) \n
-        6.  [Tests](#Tests) \n
-        7.  [Questions](#Questions) \n
-        8.  [License](#License) \n
-        9.  [Video](#Video) \n`
+        3.  [UserStory](#UserStory) \n
+        4.  [AcceptanceCriteria](#AcceptanceCriteria) \n
+        5.  [Questions](#Questions) \n
+        6.  [Installation](#Installation) \n
+        7.  [Usage](#Usage) \n
+        8.  [Video](#Video) \n
+        9.  [License](#License) \n
+        10. [Screenshot](#Screenshot) \n
+        11.  [Tests](#Tests) \n`
   return `${link}`
 }
+// var readme = `${title} ${nodebadge} ${jsbadge} ${inquirerbadge} ${toc} ${desc} ${userstory} ${acceptcriteria} ${questions} ${answers} ${installation} ${usage} ${watchmevideo} ${license} ${screenshot} ${tests} ${copyright}`
+   // Title Description UserStory AcceptanceCriteria githubusername emailaddress Gitrepo Installation Usage Video Screenshot
 
 
 module.exports = {

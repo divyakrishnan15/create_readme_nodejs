@@ -54,5 +54,6 @@ npm i
  There are no test for this app but in future we have planned to add the test with JEST.
  ## Screenshot : 
  <a name="screenshot"></a> 
- ![Watch the video](https://img.youtube.com/vi/qUvt8HQKX6A/maxresdefault.jpg) 
+ ![image](https://github.com/divyakrishnan15/create_readme_nodejs/assets/40469923/30b208d1-f268-41be-8be4-151d40a86a40)
+
  #### Copyright © 2023, Divya Krishnan. Released under the [MIT License](https://choosealicense.com/licenses/mit/).

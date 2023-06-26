@@ -42,7 +42,7 @@ npm i
  ## Usage :  
  <a name="Usage"></a> 
  Download the code to your local. Enter npm i to install all the packages in the command line. Enter node index.js. Series of questions will be asked. Answer the questions and selecte a license. Readme.md file will be generated sucessfully. (Note = to copy the content in command prompt use ctrl+shift+v) 
- ## Watchme Video - click on the video : 
+ ## Watchme Video - (click on the video to play): 
  <a name="Video"></a> 
 
    [![Watch the video](https://img.youtube.com/vi/mZnriENpnsU/maxresdefault.jpg)](https://youtu.be/mZnriENpnsU)
